@@ -29,7 +29,7 @@ public class Scene {
 
     }
     public void input(Scanner scnr){
-        System.out.print("Type 'end' when you are done with your journal entry. ");
+        System.out.print("Type enter and then 'end' when you are done with your journal entry. ");
         while(!(scnr.next().equals("end"))){
             journal += scnr.nextLine();
         }

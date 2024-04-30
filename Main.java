@@ -25,7 +25,7 @@ public class Main{
             act1.input(scnr);
         }
         else if (answer.equals("no")){
-            System.out.printf("Why not?\nPlease type \"end\" when you are done with your reason.");
+            System.out.printf("Why not?\nPlease type enter and then \"end\" when you are done with your reason.");
             String why = "";
             while(!(scnr.next().equals("end"))){
             why = scnr.nextLine();
