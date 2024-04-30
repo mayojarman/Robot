@@ -25,11 +25,11 @@ public class Main{
             act1.input(scnr);
         }
         else if (answer.equals("no")){
-            System.out.println("Why not?");
-            //String why = "";
-           // while(scnr.hasNextLine()){
-            String why = scnr.nextLine();
-           // }
+            System.out.printf("Why not?\nPlease type \"end\" when you are done with your reason.");
+            String why = "";
+            while(!(scnr.next().equals("end"))){
+            why = scnr.nextLine();
+              }
             System.out.println("Oh, " + why + " is a very valid reason. Have a nice day!");
         }
     }
