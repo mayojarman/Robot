@@ -1,14 +1,16 @@
 
 
-import java.sql.Time;
+//import java.sql.Time;
 import java.util.Scanner;
 
-import org.w3c.dom.events.Event;
+//import org.w3c.dom.events.Event;
 
 public class Main{
     public static void main(String[] args){
         String answer;
         Scanner scnr = new Scanner(System.in);
+        //Scene act1;
+        //int currTime;
        // Scenes act1;
         System.out.printf("You are a sentient Robot...\nkeeping track of your immortal life in this Solo Journaling RPG of Life and Decay.\n");
         System.out.printf("Starting with Act 1 you take a Journey trough your Lifecycle, your Robot Dm here *waves* will be Rolling 1D6 for you to help you create the Story of your Robot life. Hopefully, at the end, you can look back and be happy.\nAct 1 is your Creation, Act 2 is your Life learning, Act 3 is the Death of your Creator and Act 4 is the far future time after Mankind went extinct.\nYou create the Story, what is your purpose? What have you learned? What caused your creator to die? Why did Mankind go extinct?\n");
@@ -20,8 +22,7 @@ public class Main{
         if(answer.equals("yes")){
             System.out.println("Get ready for your Adventure!");
             System.out.println("Your story comes in 4 parts. We'll roll a couple d6s for you...");
-            Scene act1 = new Scene();
-            act1.print("happy","Stroll","capulets","montigues","hair","dolls");
+            Scene act1 = new Scene("happy","Stroll","capulets","montigues","hair","dolls");
             act1.input(scnr);
         }
         else if (answer.equals("no")){
@@ -32,5 +33,8 @@ public class Main{
               }
             System.out.println("Oh, " + why + " is a very valid reason. Have a nice day!");
         }
+        scnr.close();
     }
+
+    
 }
