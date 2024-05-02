@@ -1,53 +1,90 @@
 //package lifecyclerpg;
-import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Random;
 public class Scene {
-    private String journal;
-    private int currTime = 0;
-    private String[] optionList;
+    private String[] numList = new String[6];
+    private ArrayList<Scene> sceneList;
+    private Scene scene1;
+    private int time = 4;
+    private String option1;
+    private String option2;
+    private String option3;
+    private String option4;
+    private String option5;
+    private String option6;
+    
     public Scene(){
-    }
-    public Scene(String option1, String option2, String option3, String option4, String option5, String option6){
-        System.out.printf("\n\t" + option1 + "\n\t"+ option2 +"\n\t" + option3+"\n\t" + option4+"\n\t" + option5+"\n\t" + option6+ "\n");
-        int hello = this.randInt(6);
-        optionList = new String[6];
-        optionList[0] = option1;
-        optionList[1] = option2;
-        optionList[2] = option3;
-        optionList[3] = option4;
-        optionList[4] = option5;
-        optionList[5] = option6;
 
-        for(int i = 0; i < 6; i++){
-            if(hello == i){
-                System.out.println(optionList[i]);
-            }
+    }
+    public void setScene(int lifeCyclePoint){
+        if(lifeCyclePoint == 1){
+            option1 =  "Time Passes: The time counter ticks up by 1. Record this event in your journal to signify the passage of time and the Robot's early development.";
+            numList[0] = option1;
+            option2 =  "'What is the Robot's Purpose?'': Answer the question and write it in your journal. This defines the primary objective of the Robot's existence";
+            numList[1] = option2;
+            option3 = "'Who is the Creator of the Robot?' Answer the question and write it in your journal. This introduces the Robot's creator and their role in its creation.";
+            numList[2] = option3;
+            option4 = "'What makes the Robot Special?' Answer the question and write it in your journal. This highlights the unique attributes or capabilities of the Robot.";
+            numList[3] = option4;
+            option5 = "'Is this Robot one of a kind?' Answer the question and write it in your journal. This determines whether there are other robots like it in the world.";
+            numList[4] = option5;
+            option6 = "'What did the Robot enjoy?' Answer the question and write it in your journal. This explores the Robot's early experiences and pleasures. ";
+            numList[5] = option6;
         }
-
-    }
-    public void chooseStory(String selectedStory){
-        System.out.println(selectedStory);
-
-    }
-    public void input(Scanner scnr){
-        System.out.print("Type enter and then 'end' when you are done with your journal entry. ");
-        while(!(scnr.next().equals("end"))){
-            journal += scnr.nextLine();
+        if(lifeCyclePoint == 2){
+            option1 =  "Time Passes: The time counter ticks up by 1. Record this event in your journal to signify the passage of time and the Robot's early development.";
+            numList[0] = option1;
+            option2 =  "'What is the Robot's Purpose?'': Answer the question and write it in your journal. This defines the primary objective of the Robot's existence";
+            numList[1] = option2;
+            option3 = "'Who is the Creator of the Robot?' Answer the question and write it in your journal. This introduces the Robot's creator and their role in its creation.";
+            numList[2] = option3;
+            option4 = "'What makes the Robot Special?' Answer the question and write it in your journal. This highlights the unique attributes or capabilities of the Robot.";
+            numList[3] = option4;
+            option5 = "'Is this Robot one of a kind?' Answer the question and write it in your journal. This determines whether there are other robots like it in the world.";
+            numList[4] = option5;
+            option6 = "'What did the Robot enjoy?' Answer the question and write it in your journal. This explores the Robot's early experiences and pleasures. ";
+            numList[5] = option6;
         }
-        System.out.println(journal);
+        if(lifeCyclePoint == 3){
+            option1 =  "Time Passes: The time counter ticks up by 1. Record this event in your journal to signify the passage of time and the Robot's early development.";
+            numList[0] = option1;
+            option2 =  "'What is the Robot's Purpose?'': Answer the question and write it in your journal. This defines the primary objective of the Robot's existence";
+            numList[1] = option2;
+            option3 = "'Who is the Creator of the Robot?' Answer the question and write it in your journal. This introduces the Robot's creator and their role in its creation.";
+            numList[2] = option3;
+            option4 = "'What makes the Robot Special?' Answer the question and write it in your journal. This highlights the unique attributes or capabilities of the Robot.";
+            numList[3] = option4;
+            option5 = "'Is this Robot one of a kind?' Answer the question and write it in your journal. This determines whether there are other robots like it in the world.";
+            numList[4] = option5;
+            option6 = "'What did the Robot enjoy?' Answer the question and write it in your journal. This explores the Robot's early experiences and pleasures. ";
+            numList[5] = option6;
+        }
+        if(lifeCyclePoint == 4){
+            option1 =  "Time Passes: The time counter ticks up by 1. Record this event in your journal to signify the passage of time and the Robot's early development.";
+            numList[0] = option1;
+            option2 =  "'What is the Robot's Purpose?'': Answer the question and write it in your journal. This defines the primary objective of the Robot's existence";
+            numList[1] = option2;
+            option3 = "'Who is the Creator of the Robot?' Answer the question and write it in your journal. This introduces the Robot's creator and their role in its creation.";
+            numList[2] = option3;
+            option4 = "'What makes the Robot Special?' Answer the question and write it in your journal. This highlights the unique attributes or capabilities of the Robot.";
+            numList[3] = option4;
+            option5 = "'Is this Robot one of a kind?' Answer the question and write it in your journal. This determines whether there are other robots like it in the world.";
+            numList[4] = option5;
+            option6 = "'What did the Robot enjoy?' Answer the question and write it in your journal. This explores the Robot's early experiences and pleasures. ";
+            numList[5] = option6;
+        }
+        sceneList = new ArrayList<Scene>();
+        sceneList.add(scene1);  
     }
-    public int randInt(int currTime1){
+    public int randInt(){
         Random rand = new Random();
-        currTime = currTime1;
         int randInt = rand.nextInt(6);
-        if(randInt == 1 || randInt == 2){
-           currTime = changeTime(currTime);
+        System.out.println(numList[randInt]);
+        if(randInt == 1 || randInt ==2){
+            time -=1;
+            System.out.println(time);
         }
         return randInt;
-    }
-    public int changeTime(int currTime1){
-        currTime = currTime1 - 1;
-        return currTime;
     }
     
 }
