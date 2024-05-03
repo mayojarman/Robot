@@ -50,13 +50,19 @@ class Graphics extends JFrame {
         p.add(l3);
         p.add(l4);
         p.add(l5);
+
+        t = new JTextField("Please write your Journal entry here : " , 100);
+        String text = t.getText();
+        //System.out.println(text);
+        t.setHorizontalAlignment(JTextField.CENTER);
  
         // add panel to frame
         f.add(p);
+        p.add(t);
  
         // set the size of frame
         //f.setSize(500, 500);
-        f.setBounds(320,240,500,500);
+        f.setBounds(0,0,1300,500);
  
         f.setVisible(true);
     }
