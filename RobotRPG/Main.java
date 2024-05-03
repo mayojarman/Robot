@@ -23,15 +23,6 @@ public class Main extends JFrame {
 
         //System.out.println("You have reached the end of your Robot Life!");
 
-        JWindow w = new JWindow();
-        w.setBackground(new Color(255,50,50));
-
-        JPanel p = new JPanel();
-        JLabel l = new JLabel("You are a sentient Robot keeping track of your immortal life in this Solo Journaling RPG of Life and Decay.");
-        w.add(p);
-        w.setLocation(300,200);
-        w.setSize(300,100);
-        w.setVisible(true);
 
     }
     public static void act(int lifeCyclePoint){

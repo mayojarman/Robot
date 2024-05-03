@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "text",
+            "request": "launch",
+            "mainClass": "text",
+            "projectName": "Robot_b4d12727"
+        },
+        {
+            "type": "java",
+            "name": "Graphics",
+            "request": "launch",
+            "mainClass": "Graphics",
+            "projectName": "Robot_b4d12727"
+        },
+        {
+            "type": "java",
             "name": "GFG",
             "request": "launch",
             "mainClass": "GFG",
