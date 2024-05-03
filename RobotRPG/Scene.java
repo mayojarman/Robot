@@ -12,6 +12,7 @@ public class Scene {
     private String option4;
     private String option5;
     private String option6;
+    private int randInt;
     
     public Scene(){
 
@@ -78,13 +79,19 @@ public class Scene {
     }
     public int randInt(){
         Random rand = new Random();
-        int randInt = rand.nextInt(6);
+        randInt = rand.nextInt(6);
         System.out.println(numList[randInt]);
+        return randInt;
+    }
+    public int time(int currTime){
         if(randInt == 1 || randInt ==2){
             time -=1;
             System.out.println(time);
         }
-        return randInt;
+        return time;
     }
-    
+    public void printSelection(){
+        String selectedScene = numList[randInt];
+        System.out.println(selectedScene);
+    }
 }
