@@ -1,97 +1,55 @@
-//package lifecyclerpg;
-import java.util.ArrayList;
-import java.util.Random;
-public class Scene {
-    private String[] numList = new String[6];
-    private ArrayList<Scene> sceneList;
-    private Scene scene1;
-    private int time = 4;
-    private String option1;
-    private String option2;
-    private String option3;
-    private String option4;
-    private String option5;
-    private String option6;
-    private int randInt;
-    
-    public Scene(){
+
+
+
+import java.util.Scanner;
+import java.io.*;
+import javax.swing.*;
+import java.awt.*;
+
+public class Main extends JFrame {
+    public static void main(String[] args){
+        Scanner scnr = new Scanner(System.in);
+        int lifeCyclePoint = 1;
+        int time = 4;
+
+        //System.out.printf("You are a sentient Robot...\nkeeping track of your immortal life in this Solo Journaling RPG of Life and Decay.\n");
+        //System.out.printf("Starting with Act 1 you take a Journey trough your Lifecycle, your Robot Dm here *waves* will be Rolling 1D6 for you to help you create the Story of your Robot life. Hopefully, at the end, you can look back and be happy.\nAct 1 is your Creation, Act 2 is your Life learning, Act 3 is the Death of your Creator and Act 4 is the far future time after Mankind went extinct.\nYou create the Story, what is your purpose? What have you learned? What caused your creator to die? Why did Mankind go extinct?\n");
+        //System.out.printf("Clocks: As you progress, time is running out. Everytime the Time Passes 1 will be taken away from your time. After 4 Time Passes, you progress to the next Cycle of your Life. \nFor every Event that is not the Time Passes you get 1XP in this Lifecycle. If you get 5XP you get a +1 to your first Dice roll in the next Lifecycle. \nIf you roll the same Event more than three times it becomes a Time Passes Event. Mark your rolls in the checkboxes. \nFor the Conclusion, you sum up the overall XP and with every 5XP you unlock a new final Question, answer them one after another. \nCan you get all 4 Conclusion Questions unlocked? \nWhat may your story be?\n");
+        
+        
+        //System.out.print("...lets begin with Act1: your birth.");
+        //System.out.println("Your virtual DM will be rolling some d6s to determine what you'll be writing about!");
+        //theWholeShebang(time, lifeCyclePoint,scnr);
+
+        //System.out.println("You have reached the end of your Robot Life!");
+
+        JWindow w = new JWindow();
+        w.setBackground(new Color(255,50,50));
+
+        JPanel p = new JPanel();
+        JLabel l = new JLabel("You are a sentient Robot keeping track of your immortal life in this Solo Journaling RPG of Life and Decay.");
+        w.add(p);
+        w.setLocation(300,200);
+        w.setSize(300,100);
+        w.setVisible(true);
 
     }
-    public void setScene(int lifeCyclePoint){
-        if(lifeCyclePoint == 1){
-            option1 =  "Time Passes: The time counter ticks up by 1. Record this event in your journal to signify the passage of time and the Robot's early development.";
-            numList[0] = option1;
-            option2 =  "'What is the Robot's Purpose?'': Answer the question and write it in your journal. This defines the primary objective of the Robot's existence";
-            numList[1] = option2;
-            option3 = "'Who is the Creator of the Robot?' Answer the question and write it in your journal. This introduces the Robot's creator and their role in its creation.";
-            numList[2] = option3;
-            option4 = "'What makes the Robot Special?' Answer the question and write it in your journal. This highlights the unique attributes or capabilities of the Robot.";
-            numList[3] = option4;
-            option5 = "'Is this Robot one of a kind?' Answer the question and write it in your journal. This determines whether there are other robots like it in the world.";
-            numList[4] = option5;
-            option6 = "'What did the Robot enjoy?' Answer the question and write it in your journal. This explores the Robot's early experiences and pleasures. ";
-            numList[5] = option6;
-        }
-        if(lifeCyclePoint == 2){
-            option1 =  "Time Passes: The time counter ticks up by 1. Record this event in your journal to signify the passage of time and the Robot's early development.";
-            numList[0] = option1;
-            option2 =  "'What is the Robot's Purpose?'': Answer the question and write it in your journal. This defines the primary objective of the Robot's existence";
-            numList[1] = option2;
-            option3 = "'Who is the Creator of the Robot?' Answer the question and write it in your journal. This introduces the Robot's creator and their role in its creation.";
-            numList[2] = option3;
-            option4 = "'What makes the Robot Special?' Answer the question and write it in your journal. This highlights the unique attributes or capabilities of the Robot.";
-            numList[3] = option4;
-            option5 = "'Is this Robot one of a kind?' Answer the question and write it in your journal. This determines whether there are other robots like it in the world.";
-            numList[4] = option5;
-            option6 = "'What did the Robot enjoy?' Answer the question and write it in your journal. This explores the Robot's early experiences and pleasures. ";
-            numList[5] = option6;
-        }
-        if(lifeCyclePoint == 3){
-            option1 =  "Time Passes: The time counter ticks up by 1. Record this event in your journal to signify the passage of time and the Robot's early development.";
-            numList[0] = option1;
-            option2 =  "'What is the Robot's Purpose?'': Answer the question and write it in your journal. This defines the primary objective of the Robot's existence";
-            numList[1] = option2;
-            option3 = "'Who is the Creator of the Robot?' Answer the question and write it in your journal. This introduces the Robot's creator and their role in its creation.";
-            numList[2] = option3;
-            option4 = "'What makes the Robot Special?' Answer the question and write it in your journal. This highlights the unique attributes or capabilities of the Robot.";
-            numList[3] = option4;
-            option5 = "'Is this Robot one of a kind?' Answer the question and write it in your journal. This determines whether there are other robots like it in the world.";
-            numList[4] = option5;
-            option6 = "'What did the Robot enjoy?' Answer the question and write it in your journal. This explores the Robot's early experiences and pleasures. ";
-            numList[5] = option6;
-        }
-        if(lifeCyclePoint == 4){
-            option1 =  "Time Passes: The time counter ticks up by 1. Record this event in your journal to signify the passage of time and the Robot's early development.";
-            numList[0] = option1;
-            option2 =  "'What is the Robot's Purpose?'': Answer the question and write it in your journal. This defines the primary objective of the Robot's existence";
-            numList[1] = option2;
-            option3 = "'Who is the Creator of the Robot?' Answer the question and write it in your journal. This introduces the Robot's creator and their role in its creation.";
-            numList[2] = option3;
-            option4 = "'What makes the Robot Special?' Answer the question and write it in your journal. This highlights the unique attributes or capabilities of the Robot.";
-            numList[3] = option4;
-            option5 = "'Is this Robot one of a kind?' Answer the question and write it in your journal. This determines whether there are other robots like it in the world.";
-            numList[4] = option5;
-            option6 = "'What did the Robot enjoy?' Answer the question and write it in your journal. This explores the Robot's early experiences and pleasures. ";
-            numList[5] = option6;
-        }
-        sceneList = new ArrayList<Scene>();
-        sceneList.add(scene1);  
+    public static void act(int lifeCyclePoint){
+        Scene scene = new Scene();
+        int temp = scene.randInt();
+        System.out.println("You rolled a " + temp + " on the die. That means you'll write for this prompt: ");
+        scene.setScene(lifeCyclePoint);
+        scene.printSelection();
     }
-    public int randInt(){
-        Random rand = new Random();
-        randInt = rand.nextInt(6);
-        System.out.println(numList[randInt]);
-        return randInt;
-    }
-    public int time(int currTime){
-        if(randInt == 1 || randInt ==2){
-            time -=1;
-            System.out.println(time);
+    public static void theWholeShebang(int time, int lifeCyclePoint,Scanner scnr){
+        while(time != 0){
+            Scene scene = new Scene();
+            scene.time(time);
+            act(lifeCyclePoint);
+            lifeCyclePoint++;
+            Journal journal = new Journal();
+            journal.addToJournal(scnr);
         }
-        return time;
     }
-    public void printSelection(){
-        String selectedScene = numList[randInt];
-        System.out.println(selectedScene);
-    }
+    
 }
