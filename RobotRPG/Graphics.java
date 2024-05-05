@@ -45,7 +45,7 @@ class Graphics extends JFrame {
         openingText.setBackground(f.getBackground());
         openingText.setLineWrap(true);
         openingText.setWrapStyleWord(true);
-        Font font= new Font("Courier", Font.PLAIN, 50);
+        Font font= new Font("DialogInput", Font.PLAIN, 21);
         openingText.setFont(font);
         //openingText.setAlignmentX(300);
         //openingText.setCharacterAttributes(Color.BLACK);
