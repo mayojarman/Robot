@@ -45,6 +45,9 @@ class Graphics extends JFrame {
         openingText.setBackground(f.getBackground());
         openingText.setLineWrap(true);
         openingText.setWrapStyleWord(true);
+        Font font= new Font("Courier", Font.PLAIN, 50);
+        openingText.setFont(font);
+        //openingText.setAlignmentX(300);
         //openingText.setCharacterAttributes(Color.BLACK);
         // add text to label
 
@@ -80,7 +83,7 @@ class Graphics extends JFrame {
         String text = t.getText();
         //System.out.println(text);
         t.setHorizontalAlignment(JTextField.CENTER);
- 
+        ///t.setLineWrap(true);
         // add panel to frame
         f.add(p);
         p.add(t);
