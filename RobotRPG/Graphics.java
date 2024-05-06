@@ -1,6 +1,8 @@
 // Java Program to create a 
 // blank label and add text to it.
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.text.*;
@@ -46,6 +48,13 @@ class Graphics extends JFrame {
         openingText.setLineWrap(true);
         openingText.setWrapStyleWord(true);
         Font font= new Font("DialogInput", Font.PLAIN, 21);
+        try {
+            font = Font.createFont(Font.TRUETYPE_FONT, new File("Fonts/Cyborg Punk.ttf")).deriveFont(21f);
+            
+        } catch (IOException|FontFormatException e) {
+            // TODO: handle exception
+        }
+        
         openingText.setFont(font);
         //openingText.setAlignmentX(300);
         //openingText.setCharacterAttributes(Color.BLACK);
