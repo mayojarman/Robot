@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Graphics",
+            "request": "launch",
+            "mainClass": "Graphics",
+            "projectName": "Robot_3df715e8"
+        },
+        {
+            "type": "java",
             "name": "text",
             "request": "launch",
             "mainClass": "text",
