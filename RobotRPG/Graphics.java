@@ -2,7 +2,10 @@
 // blank label and add text to it.
 import java.awt.event.*;
 import java.io.File;
+<<<<<<< HEAD
+=======
 import java.io.IOException;
+>>>>>>> 7bd6df7d97268b2334d34ee72824521780e407a8
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.text.*;
@@ -30,6 +33,9 @@ class Graphics extends JFrame {
         openingText.setBackground(f.getBackground());
         openingText.setLineWrap(true);
         openingText.setWrapStyleWord(true);
+<<<<<<< HEAD
+        //Font font= new Font("DialogInput", Font.PLAIN, 15);
+=======
         Font font= new Font("DialogInput", Font.PLAIN, 21);
         try {
             font = Font.createFont(Font.TRUETYPE_FONT, new File("Fonts/Cyborg Punk.ttf")).deriveFont(21f);
@@ -38,10 +44,16 @@ class Graphics extends JFrame {
             // TODO: handle exception
         }
         
+>>>>>>> 7bd6df7d97268b2334d34ee72824521780e407a8
         openingText.setFont(font);
         //openingText.setAlignmentX(300);
         //openingText.setCharacterAttributes(Color.BLACK);
         // add text to label
+
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        String []fontFamilies = ge.getAvailableFontFamilyNames();
+
+        Font font = Font.createFont(Font.TRUETYPE_FONT, new File("Exwayer-X3eqa.ttf"));
 
         openingText.setText("You are a sentient Robot...\n" + 
             "keeping track of your immortal life in this Solo Journaling RPG of Life and Decay.\n" + 
