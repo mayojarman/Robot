@@ -48,12 +48,12 @@ class Graphics extends JFrame {
         openingText.setWrapStyleWord(true);
         //Font font= new Font("DialogInput", Font.PLAIN, 15);
         Font font= new Font("DialogInput", Font.PLAIN, 21);
-        try {
-            font = Font.createFont(Font.TRUETYPE_FONT, new File("Valorax-lg25V.otf")).deriveFont(21f);
-            
-        } catch (IOException|FontFormatException e) {
+        //try {
+        //    font = Font.createFont(Font.TRUETYPE_FONT, new File("Exwayer-X3eqa.tff")).deriveFont(21f);
+       //     
+       // } catch (IOException|FontFormatException e) {
             // TODO: handle exception
-        }
+       // }
         openingText.setFont(font);
         //openingText.setAlignmentX(300);
         //openingText.setCharacterAttributes(Color.BLACK);
@@ -104,8 +104,20 @@ class Graphics extends JFrame {
         // set the size of frame
         //f.setSize(500, 500);
         f.setBounds(0,0,1300,500);
+
+        JButton b = new JButton("End");
+        b.setBounds(20,20,10,10);  
+        b.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            t.setText("Hello and welcome to the first act of your life");  
+        } 
+         }); 
+
+        p.add(b);
+
  
         f.setVisible(true);
         f.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
     }
 }
