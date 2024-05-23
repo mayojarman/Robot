@@ -47,8 +47,8 @@ class Graphics extends JFrame {
         t = new JTextField("Please write your Journal entry here : " , 100);
 
         String text = t.getText();
-        String [] journal = new String[]();
-        journal.add(test);
+        String[] journal = new String[]();
+        journal.add(text);
         t.setHorizontalAlignment(JTextField.CENTER);
         f.add(p);
         p.add(t);
