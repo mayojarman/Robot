@@ -39,33 +39,32 @@ class Graphics extends JFrame {
             );
 
         // create a panel
-        JPanel p = new JPanel();
-        p.setLayout(new GridLayout(2, 1));
+       // JPanel p = new JPanel();
+       // p.setLayout(new GridLayout(2, 1));
         // add label to panel
-        p.add(openingText);
+        f.add(openingText);
 
         t = new JTextField("Please write your Journal entry here : " , 100);
 
-        String text = t.getText();
-        String[] journal = new String[]();
-        journal.add(text);
+      //  String text = t.getText();
+       // String[] journal = new String[5]();
+        ///journal.add(text);
         t.setHorizontalAlignment(JTextField.CENTER);
-        f.add(p);
-        p.add(t);
+        f.add(t);
  
         // set the size of frame
         //f.setSize(500, 500);
         f.setBounds(0,0,1300,500);
 
         JButton b = new JButton("End");
-        b.setBounds(20,20,10,10);  
+       // b.setBounds(20,20,10,10);  
         b.addActionListener(new ActionListener(){  
         public void actionPerformed(ActionEvent e){  
             t.setText("Hello and welcome to the first act of your life");  
         } 
          }); 
 
-        p.add(b);
+        f.add(b);
 
  
         f.setVisible(true);

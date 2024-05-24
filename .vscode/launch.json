@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "theRealSlimShady",
+            "request": "launch",
+            "mainClass": "theRealSlimShady",
+            "projectName": "Robot_b4d12727"
+        },
+        {
+            "type": "java",
             "name": "Graphics",
             "request": "launch",
             "mainClass": "Graphics",
