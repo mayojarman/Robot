@@ -13,6 +13,10 @@ public class theRealSlimShady {
     {
         // create frame
         JFrame f = new JFrame("Robot RPG");
+        JPanel p = new JPanel();
+        p.setLayout(new GridLayout(2,10));
+
+         
 
         //creating a text area
         JTextArea ta = new JTextArea();
@@ -31,9 +35,14 @@ public class theRealSlimShady {
             "You create the Story, what is your purpose? What have you learned? What caused your creator to die? Why did Mankind go extinct?"
             );
 
+            
+
         //adding things to f
         f.add(ta);
         f.setVisible(true);
+        p.setVisible(true);
+        f.add(p);
+        p.add(ta);
 
 
     }
