@@ -1,5 +1,3 @@
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
 import java.awt.event.*;
 import java.io.File;
 import java.awt.*;
@@ -11,12 +9,17 @@ public class theRealSlimShady {
     public JTextArea ta = new JTextArea();
     public static void main(String[] args)
     {
+        //creating array
+
+        String[] journal = new String[4];
+        
         // create frame
         JFrame f = new JFrame("Robot RPG");
+        f.setSize(1200,600);
+
+        //create panel
         JPanel p = new JPanel();
         p.setLayout(new GridLayout(2,10));
-
-         
 
         //creating a text area
         JTextArea ta = new JTextArea();
@@ -26,6 +29,32 @@ public class theRealSlimShady {
         ta.setWrapStyleWord(true);
         Font font= new Font("DialogInput", Font.PLAIN, 21);
         ta.setFont(font);
+
+        
+
+        // creating the journal text box
+        JTextArea ta2 = new JTextArea();
+        ta2.setEditable(true);
+        ta2.setBackground(f.getBackground());
+        ta2.setLineWrap(true);
+        ta2.setWrapStyleWord(true);
+        Font font2 = new Font("DialogInput", Font.PLAIN, 21);
+        ta2.setFont(font2);
+        ta2.setText("Please put your journal entry here: ");
+        int tally = 0;
+        //creating a button
+        JButton save = new JButton("save");
+        save.addActionListener(new ActionListener(){  
+            int tally = 0;
+        public void actionPerformed(ActionEvent e){  
+            String journalEntry = ta2.getText();
+            System.out.println(journalEntry);
+            journal[tally] = journalEntry;
+            System.out.println(journal[tally] + "slkdjfalsjdflkjads");
+            tally++;
+            System.out.print(tally);
+        } 
+         });
 
         //setting opening text and putting it in text area
         ta.setText("You are a sentient Robot...\n" + 
@@ -37,12 +66,17 @@ public class theRealSlimShady {
 
             
 
-        //adding things to f
+        //adding things to f and p
         f.add(ta);
-        f.setVisible(true);
-        p.setVisible(true);
         f.add(p);
         p.add(ta);
+        p.add(save);
+        p.add(ta2);
+
+        //setting 44
+
+        f.setVisible(true);
+        p.setVisible(true);
 
 
     }
