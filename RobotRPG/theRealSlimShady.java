@@ -19,7 +19,7 @@ public class theRealSlimShady {
 
         //create panel
         JPanel p = new JPanel();
-        p.setLayout(new GridLayout(2,10));
+        p.setLayout(new GridLayout(2,20));
 
         //creating a text area
         JTextArea ta = new JTextArea();
@@ -41,20 +41,24 @@ public class theRealSlimShady {
         Font font2 = new Font("DialogInput", Font.PLAIN, 21);
         ta2.setFont(font2);
         ta2.setText("Please put your journal entry here: ");
-        int tally = 0;
         //creating a button
         JButton save = new JButton("save");
         save.addActionListener(new ActionListener(){  
             int tally = 0;
-        public void actionPerformed(ActionEvent e){  
-            String journalEntry = ta2.getText();
-            System.out.println(journalEntry);
-            journal[tally] = journalEntry;
-            System.out.println(journal[tally] + "slkdjfalsjdflkjads");
+            public void actionPerformed(ActionEvent e){ 
             tally++;
-            System.out.print(tally);
+            String temp = ta2.getText();
+            journal[tally] = temp;
         } 
          });
+
+        JButton showMeMyJournal = new JButton("Show Me My Journal");
+        showMeMyJournal.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){ 
+                String text = journal[0]+ journal[1] + journal [2];
+                ta2.setText(text);
+            }
+        });
 
         //setting opening text and putting it in text area
         ta.setText("You are a sentient Robot...\n" + 
@@ -72,6 +76,7 @@ public class theRealSlimShady {
         p.add(ta);
         p.add(save);
         p.add(ta2);
+        p.add(showMeMyJournal);
 
         //setting 44
 
